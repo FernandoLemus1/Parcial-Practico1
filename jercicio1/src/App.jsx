@@ -4,31 +4,12 @@ import {React,useState} from 'react';
 function App() {
   const [meses,setMeses]=useState("");
   const [descuento,setDescuento]=useState();
+  const[total,setTotal]=useState();
+  const precio=25;
   const handleChange=(e)=>{
     const meses=e.target.value;
-
-    {/*switch (meses) {
-      case 0:
-        descuento=0;
-        break;
-      case 2:
-        descuento=25*0.1;
-        break;
-      case 4:
-        descuento=25*0.2;
-      break;
-      case 6:
-        descuento=25*0.27;
-      break;
-      case 8:
-        descuento=25*0.37;
-      break;
-      default:
-        descuento=25*0.53;
-        break;
-
-    }**/}
-    console.log(meses);
+    setMeses(meses);
+  
   }
 
   
@@ -49,7 +30,7 @@ function App() {
         </select>
         <label for="meses">cantidad de meses</label>
         <input type='number' onChange={handleChange}/>
-        <h1>total a pagar {} </h1>
+        <h1>Cantidad de meses {meses} </h1>
       </div>
     </div>
   );
